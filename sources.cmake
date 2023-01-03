@@ -1,0 +1,11 @@
+# SPDX-License-Identifier: MIT
+
+if(PWIFI_TARGET_PLATFORM STREQUAL esp32)
+	list(APPEND PWIFI_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/src/esp32.c)
+elseif(PWIFI_TARGET_PLATFORM STREQUAL zephyr)
+	list(APPEND PWIFI_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/src/zephyr.c)
+else()
+	message(FATAL_ERROR "No target specified.")
+endif()
+
+list(APPEND PWIFI_INCS ${CMAKE_CURRENT_SOURCE_DIR}/include)

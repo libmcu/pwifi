@@ -11,6 +11,7 @@ $ git submodule add https://github.com/libmcu/pwifi.git pwifi
 
 Supported target platforms are:
 
+- dummy
 - esp32
 - zephyr
 

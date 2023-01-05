@@ -13,8 +13,12 @@ extern "C" {
 
 #include <stdint.h>
 
+#if !defined(WIFI_SSID_MAX_LEN)
 #define WIFI_SSID_MAX_LEN		32U
+#endif
+#if !defined(WIFI_MAC_ADDR_LEN)
 #define WIFI_MAC_ADDR_LEN		6U
+#endif
 
 enum wifi_event {
 	WIFI_EVT_UNKNOWN,

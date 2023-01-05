@@ -301,5 +301,5 @@ struct wifi *wifi_create_default(void)
 
 void wifi_destroy_default(struct wifi *iface)
 {
-	unused(iface);
+	(void)iface;
 }

@@ -6,12 +6,12 @@
 
 #include "pwifi/wifi.h"
 
-struct wifi *dummy_wifi_create(void)
+struct wifi *wifi_create_default(void)
 {
 	return 0;
 }
 
-void dummy_wifi_destroy(struct wifi *inst)
+void wifi_destroy_default(struct wifi *inst)
 {
 	(void)inst;
 }

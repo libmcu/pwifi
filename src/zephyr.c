@@ -290,8 +290,8 @@ struct wifi *wifi_create_default(void)
 	static_wifi_iface.base.api.connect = do_connect;
 	static_wifi_iface.base.api.disconnect = do_disconnect;
 	static_wifi_iface.base.api.scan = do_scan;
-	static_wifi_iface.base.api.start = do_start;
-	static_wifi_iface.base.api.stop = do_stop;
+	static_wifi_iface.base.api.enable = do_start;
+	static_wifi_iface.base.api.disable = do_stop;
 	static_wifi_iface.base.api.get_status = do_get_status;
 	static_wifi_iface.base.api.register_event_callback =
 			do_register_event_callback;

@@ -16,6 +16,6 @@ Supported target platforms are:
 - zephyr
 
 ```cmake
-set(PWIFI_TARGET_PLATFORM esp32)
+set(TARGET_PLATFORM esp32)
 add_subdirectory(pwifi)
 ```

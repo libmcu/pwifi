@@ -19,8 +19,8 @@ extern "C" {
 #endif
 
 #undef esp32 /* to prevent expansion to a constant number since esp32 is defined by ESP-IDF build system */
-#define wifi_create_default	CONCAT(PWIFI_TARGET_PLATFORM, _wifi_create)
-#define wifi_destroy_default	CONCAT(PWIFI_TARGET_PLATFORM, _wifi_destroy)
+#define wifi_create_default	CONCAT(TARGET_PLATFORM, _wifi_create)
+#define wifi_destroy_default	CONCAT(TARGET_PLATFORM, _wifi_destroy)
 
 struct wifi *wifi_create_default(void);
 void wifi_destroy_default(struct wifi *inst);

@@ -1,13 +1,12 @@
 # SPDX-License-Identifier: MIT
 
-if(PWIFI_TARGET_PLATFORM STREQUAL dummy)
-	list(APPEND PWIFI_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/src/dummy.c)
-elseif(PWIFI_TARGET_PLATFORM STREQUAL esp32)
+if(TARGET_PLATFORM STREQUAL esp32)
 	list(APPEND PWIFI_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/src/esp32.c)
-elseif(PWIFI_TARGET_PLATFORM STREQUAL zephyr)
+elseif(TARGET_PLATFORM STREQUAL zephyr)
 	list(APPEND PWIFI_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/src/zephyr.c)
 else()
-	message(FATAL_ERROR "No target specified.")
+	message(WARN "No target specified. Building with dummy target")
+	list(APPEND PWIFI_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/src/dummy.c)
 endif()
 
 list(APPEND PWIFI_INCS ${CMAKE_CURRENT_SOURCE_DIR}/include)

@@ -4,6 +4,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+#if defined(CONFIG_WIFI)
+
 #include <zephyr/net/net_if.h>
 #include <zephyr/net/wifi_mgmt.h>
 #include <zephyr/net/dhcpv4.h>
@@ -268,7 +270,7 @@ static int do_register_event_callback(struct wifi *iface,
 	return 0;
 }
 
-struct wifi *wifi_create_default(void)
+struct wifi *zephyr_wifi_create(void)
 {
 	static_wifi_iface.iface = net_if_get_default();
 
@@ -298,8 +300,14 @@ struct wifi *wifi_create_default(void)
 
 	return &static_wifi_iface.base;
 }
+#else /* CONFIG_WIFI */
+struct wifi *zephyr_wifi_create(void)
+{
+	return 0;
+}
+#endif
 
-void wifi_destroy_default(struct wifi *iface)
+void zephyr_wifi_destroy(struct wifi *iface)
 {
 	(void)iface;
 }

@@ -5,11 +5,14 @@
  */
 
 #include "pwifi/wifi.h"
+
 #include <errno.h>
 #include <stdbool.h>
 #include <string.h>
+
 #include "esp_wifi.h"
 #include "esp_event.h"
+#include "esp_mac.h"
 
 enum esp32_state {
 	ESP32_STATE_UNKNOWN,
